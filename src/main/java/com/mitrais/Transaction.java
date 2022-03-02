@@ -49,4 +49,7 @@ public class Transaction
             System.out.println("Status: " + data.status);
         }
     }
+    public List<HistoryData> getHistory(){
+        return transactionHistoryList;
+    }
 }
