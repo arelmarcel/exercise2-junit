@@ -16,6 +16,8 @@ class MainTest {
     void createUsers() {
         AddData();
 
+        List<Users> createUserData = Main.createUsers();
+
         assertEquals(listOfUser.size(), Main.createUsers().size());
 
         // if the size is different, test failed
@@ -24,19 +26,19 @@ class MainTest {
         }
 
         assertAll(
-                () -> assertEquals(listOfUser.get(0).getId(), Main.createUsers().get(0).getId()),
-                () -> assertEquals(listOfUser.get(0).getName(), Main.createUsers().get(0).getName()),
-                () -> assertEquals(listOfUser.get(0).getPoint(), Main.createUsers().get(0).getPoint())
+                () -> assertEquals(listOfUser.get(0).getId(), createUserData.get(0).getId()),
+                () -> assertEquals(listOfUser.get(0).getName(),  createUserData.get(0).getName()),
+                () -> assertEquals(listOfUser.get(0).getPoint(),  createUserData.get(0).getPoint())
         );
         assertAll(
-                () -> assertEquals(listOfUser.get(1).getId(), Main.createUsers().get(1).getId()),
-                () -> assertEquals(listOfUser.get(1).getName(), Main.createUsers().get(1).getName()),
-                () -> assertEquals(listOfUser.get(1).getPoint(), Main.createUsers().get(1).getPoint())
+                () -> assertEquals(listOfUser.get(1).getId(),  createUserData.get(1).getId()),
+                () -> assertEquals(listOfUser.get(1).getName(),  createUserData.get(1).getName()),
+                () -> assertEquals(listOfUser.get(1).getPoint(),  createUserData.get(1).getPoint())
         );
         assertAll(
-                () -> assertEquals(listOfUser.get(2).getId(), Main.createUsers().get(2).getId()),
-                () -> assertEquals(listOfUser.get(2).getName(), Main.createUsers().get(2).getName()),
-                () -> assertEquals(listOfUser.get(2).getPoint(), Main.createUsers().get(2).getPoint())
+                () -> assertEquals(listOfUser.get(2).getId(),  createUserData.get(2).getId()),
+                () -> assertEquals(listOfUser.get(2).getName(), createUserData.get(2).getName()),
+                () -> assertEquals(listOfUser.get(2).getPoint(), createUserData.get(2).getPoint())
         );
     }
 
