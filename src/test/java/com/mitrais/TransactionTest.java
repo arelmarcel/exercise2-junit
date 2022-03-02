@@ -44,5 +44,20 @@ class TransactionTest {
                 () -> assertNotNull(historyLists)
 
         );
+
+        transaction.SendPoint(usersList.get(0), usersList.get(1), 10000, 12, 1,2020);
+
+        List<HistoryData> historyLists2 =  transaction.getHistory();
+        assertAll(
+                () -> assertEquals(1900,  arel.getPoint() ),
+                () -> assertNotEquals(2000, bernard.getPoint()),
+
+                () -> assertEquals("Transaction fail (doesn't have enough point)", historyLists2.get(1).status),
+                () -> assertNotEquals("Transaction success", historyLists2.get(1).status),
+
+                () -> assertNotNull(historyLists2)
+
+        );
+
     }
 }
