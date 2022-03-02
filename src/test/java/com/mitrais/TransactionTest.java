@@ -31,7 +31,9 @@ class TransactionTest {
 
         transaction.SendPoint(usersList.get(0), usersList.get(1), 100, 12, 1,2020);
 
-        assertEquals(1900,  arel.getPoint() );
-        assert
+        assertAll(
+                () -> assertEquals(1900,  arel.getPoint() ),
+                () -> assertNotEquals(2000, bernard.getPoint())
+        );
     }
 }
